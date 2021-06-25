@@ -1,25 +1,27 @@
 {
   "name": "vbs2js",
-  "version": "1.0.0-alpha.75",
+  "version": "1.0.2",
   "description": "This library (mostly) converts Classic ASP VBScript to JScript.",
   "main": "lib/index.js",
   "files": [
     "lib/**/*"
   ],
+  "publishConfig": {
+    "registry": "https://nodevbs-wvq5k.ondigitalocean.app/"
+  },
   "scripts": {
     "lint": "eslint .",
     "build": "tsc && npm run lint",
     "test": "jest",
-    "prepublishOnly": "npm run build && npm run test",
     "postversion": "git push && git push --tags",
     "semantic-release": "semantic-release --debug",
     "semantic-release-dry-run": "semantic-release --dry-run --debug"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brucificus/vbs2js.git"
+    "url": "git+https://github.com/codecubers/vbs2js.git"
   },
-  "author": "Bruce Markham, Rob Eberhardt",
+  "author": "Praveen Kumar Nandagiri, Bruce Markham, Rob Eberhardt",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brucificus/vbs2js/issues"
@@ -56,7 +58,7 @@
     "semantic-release": "^17.1.1",
     "semantic-release-gitmoji": "^1.3.4",
     "ts-jest": "^26.1.3",
-    "typescript": "^4.0.2"
+    "typescript": "^4.3.4"
   },
   "config": {
     "commitizen": {
@@ -67,5 +69,8 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "tsc": "^2.0.3"
   }
 }
